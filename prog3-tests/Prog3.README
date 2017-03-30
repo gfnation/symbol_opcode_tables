@@ -1,0 +1,142 @@
+FILES:
+programfile1
+programfile2
+opcodefile1
+opcodefile2
+opcodefile3
+
+
+NOTES:
+- The only difference between case 1 and case 2 is the hash table size. 
+
+- The only difference between case 3 and case 4 is the hash table size.
+
+- The only difference between case 3 and case 5 is the order of the opcode file
+  (this causes the tree to have a different topology and thus a different height)
+
+- Each line of the program file will either start with the first
+  character of an instruction, or a single '\t' character followed by
+  the first character of a label.
+
+- Don't forget to keep track of LC values. The starting LC for each file is 0
+
+- Don't forget to account for memory allocation directives (e.g. "word" in programfile1)
+
+- Below are 5 sample test cases and their expected output (output should be to stdout, NOT a file)
+
+--------------------  Test Case 1 -------------------- 
+
+
+***COMMAND TO EXECUTE***
+
+
+firstpass opcodefile1 programfile1 2
+
+
+
+
+***EXPECTED OUTPUT***
+
+
+addr comp comf hio lda mulr
+
+height = 3
+
+0: (val1 / 11) -> (second / 8) -> (first / 2) -> NULL
+1: (val2 / 14) -> NULL
+
+
+
+--------------------  Test Case 2 -------------------- 
+
+
+***COMMAND TO EXECUTE***
+
+
+firstpass opcodefile1 programfile1 5
+
+
+
+
+***EXPECTED OUTPUT***
+
+
+addr comp comf hio lda mulr
+
+height = 3
+
+0: NULL
+1: NULL
+2: (val1 / 11) -> (second / 8)
+3: (val2 / 14) -> NULL
+4: (first / 2) -> NULL
+
+
+--------------------  Test Case 3 -------------------- 
+
+
+***COMMAND TO EXECUTE***
+
+
+firstpass opcodefile2 programfile2 3
+
+
+
+
+***EXPECTED OUTPUT***
+
+compr divf divr fix j jsub ldb ldx
+
+height = 3
+
+0: (xyz / 21) -> (bar / 18) -> (foo / 6) -> NULL
+1: NULL
+2: (val / 15) -> (var / 14) -> (blah / 12) -> (label / 9) -> NULL
+
+
+--------------------  Test Case 4 -------------------- 
+
+
+***COMMAND TO EXECUTE***
+
+
+firstpass opcodefile2 programfile2 8
+
+
+
+
+***EXPECTED OUTPUT***
+
+compr divf divr fix j jsub ldb ldx
+
+height = 3
+
+0: NULL
+1: (xyz, 21) -> (val / 15) -> (blah / 12) -> NULL
+2: NULL
+3: (bar / 18) -> NULL
+4: (label / 9) -> NULL
+5: NULL
+6: (foo / 6) -> NULL
+7: (var / 14) -> NULL
+
+--------------------  Test Case 5 -------------------- 
+
+
+***COMMAND TO EXECUTE***
+
+
+firstpass opcodefile3 programfile2 3
+
+
+
+
+***EXPECTED OUTPUT***
+
+compr divf divr fix j jsub ldb ldx
+
+height = 7
+
+0: (xyz / 21) -> (bar / 18) -> (foo / 6) -> NULL
+1: NULL
+2: (val / 15) -> (var / 14) -> (blah / 12) -> (label / 9) -> NULL

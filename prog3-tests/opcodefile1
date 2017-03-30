@@ -1,0 +1,6 @@
+comp 7 3
+compf 11 3
+lda 8 3
+hio 244 1
+mulr 152 2
+addr 151 2

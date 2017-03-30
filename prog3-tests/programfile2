@@ -1,0 +1,10 @@
+	ldb val
+	fix
+	divr X T
+foo ldx blah
+label divf blah
+blah compr B A
+var fix
+val ldb foo
+bar ldx foo
+xyz fix

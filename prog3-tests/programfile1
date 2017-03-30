@@ -1,0 +1,7 @@
+	addr A B
+first mulr B A
+	compf val1
+	hio
+second lda val2
+val1 word 10
+val2 word 4

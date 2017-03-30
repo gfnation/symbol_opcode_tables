@@ -55,6 +55,8 @@ int main(int argc, char *argv[])
 	}
 	
 	
-	symbolTable(
+	buildSymbolTable(
 	
+
+	return 0;
 }
