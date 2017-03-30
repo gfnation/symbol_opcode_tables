@@ -1,0 +1,1 @@
+int hashFunction(char *s, int T);
