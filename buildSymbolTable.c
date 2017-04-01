@@ -1,5 +1,4 @@
-buildSymbolTable(FILE *o_file, )
+buildSymbolTable(FILE *o_file)
 {
-
     
 }

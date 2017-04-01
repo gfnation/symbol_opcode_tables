@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
 	int size2 = strlen(argv[2]);
 	int size3 = strlen(argv[3]);
 	
+	//instruction_set is the opcode file.  
 	char instruction_set[size1];
 	char program_file[size2];
 	char hashtable_size[size3];
@@ -54,9 +55,10 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 	
-	
-	buildSymbolTable(
+	symbolTable(p_file);
+	opcodeTable(i_file); 
 	
 
+	
 	return 0;
 }
