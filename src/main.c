@@ -1,6 +1,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "opcodeTable.h"
+#include "symbolTable.h"
 #define ASCII_To_INT 48
 
 int main(int argc, char *argv[])

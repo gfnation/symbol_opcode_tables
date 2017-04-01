@@ -1,0 +1,1 @@
+void symbolTable(FILE *in);

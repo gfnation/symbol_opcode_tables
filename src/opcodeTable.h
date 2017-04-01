@@ -1,13 +1,15 @@
 #define instruction 5 //Max instruction length will be 5
+#include <string.h>
 
-typedef struct
+typedef struct tree Tree;
+struct tree
 {
     char symbol[instruction];
     int opcode;
     int format;
     Tree *left;
     Tree *right;
-}Tree;
+};
 
 void insert();
 int getOpcode(char instruct[]);
