@@ -2,5 +2,5 @@
 
 buildOpcodeTable(FILE *in)
 {
-  
+  Tree trees;
 }
