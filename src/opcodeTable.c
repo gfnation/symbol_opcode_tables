@@ -4,6 +4,40 @@ void opcodeTable(FILE *in)
 {
     Tree opTree;
     opTree = buildOpcodeTable(in);
+	fprintf(stdout, "%d", height(opTree));
+
+}
+
+int height(Tree tree)
+{ 
+	if(tree.right == NULL && tree.left == NULL)
+	{
+		return 0;	
+	}
+	else
+	{
+		int left_height = 0;
+		int right_height = 0;
+		if(tree.right != NULL)
+		{
+			right_height = height(*(tree).right);
+		}
+		if(tree.left != NULL)
+		{
+			left_height = height(*(tree).left);
+		}
+		
+		
+		if(left_height > right_height)
+		{
+			return 1 + left_height;
+		}
+		else
+		{
+			return 1 + right_height;
+		}
+
+	}
 
 }
 
