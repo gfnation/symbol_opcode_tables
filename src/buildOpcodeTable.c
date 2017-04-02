@@ -1,10 +1,16 @@
 #include "opcodeTable.h"
 
-buildOpcodeTable(FILE *op)
+Tree buildOpcodeTable(FILE *op)
 {
-  typedef struct tree Tree;
+  char ins[instruction];
+  int code, form;
+  Tree *left_node;
+  Tree *right_node;
 
+  /*while(!(feof(op)))
+  {
+    fscanf("%s %d %d", ins, &code, &form);
 
-  fscanf()
+  }*/
   
 }
