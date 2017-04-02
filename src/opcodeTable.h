@@ -11,12 +11,11 @@ struct tree
     Tree *right;
 };
 
+void opcodeTable(FILE *in);
+int height(Tree tree);
 
 void insert(Tree ins, Tree full);
 int getOpcode(char instruct[], Tree opTree);
 int getFormat(char instruct[], Tree opTree);
 void toString(Tree contents);
 
-void opcodeTable(FILE *in);
-Tree buildOpcodeTable(FILE *op);
-int height(Tree tree);
