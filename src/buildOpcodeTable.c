@@ -1,4 +1,7 @@
 #include "opcodeTable.h"
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 Tree buildOpcodeTable(FILE *op)
 {
@@ -13,4 +16,4 @@ Tree buildOpcodeTable(FILE *op)
 
   }*/
   
-}sy
+}

@@ -13,9 +13,10 @@ struct tree
     Tree *right;
 };
 
+
 void insert();
-int getOpcode(char instruct[]);
-int getFormat(char instruct[]);
+int getOpcode(char instruct[], Tree opTree);
+int getFormat(char instruct[], Tree opTree);
 void toString(Tree contents);
 
 void opcodeTable(FILE *in);

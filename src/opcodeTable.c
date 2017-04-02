@@ -14,12 +14,13 @@ void insert(Tree ins, Tree full)
     {
         if(ins.symbol[FIRST] > full.symbol[FIRST])
         {
+			
             //If the first symbol is greater than the first symbol in the tree.
-            full.right = ins;
+            *(full).right = ins;
         }
         else if(ins.symbol[FIRST] < full.symbol[FIRST])
         {
-            full.left = ins;
+            *(full).left = ins;
         }
         else
         {
@@ -29,36 +30,36 @@ void insert(Tree ins, Tree full)
             {
                 if(ins.symbol[loop] > full.symbol[loop])
                 {
-                    full.right = ins;
+                    *(full).right = ins;
                     loop = len;
                 }
-                if(ins.symbol[loop] < full.symbol([loop]))
+                if(ins.symbol[loop] < full.symbol[loop])
                 {
-                    full.left = ins;
+                    *(full).left = ins;
                     loop = len;
                 }
             }
             if(loop == len && (full.right == NULL && full.left == NULL))
             {
-                full.right = ins;
+                *(full).right = ins;
             }
         }
     }
     else if(full.left == NULL && (ins.symbol[FIRST] < full.symbol[FIRST]))
     {
-        full.left = ins;
+        *(full).left = ins;
     }
     else if(full.right == NULL && (ins.symbol[FIRST] < full.symbol[FIRST]))
     {
-        full.right = ins;
+        *(full).right = ins;
     }
     //Recursion 
     else
     {
         if(ins.symbol[FIRST] >= full.symbol[FIRST])
-            insert(ins, full->right);
+            insert(ins, *(full).right);
         else
-            insert(ins, full->left);
+            insert(ins, *(full).left);
     }
 }
 
@@ -67,12 +68,12 @@ int getOpcode(char instruct[], Tree opTree)
     if(strcmp(instruct, opTree.symbol)==0)
         return opTree.opcode;
     else if(instruct[FIRST] >= opTree.symbol[FIRST])
-        getOpcode(instruct, opTree->right);
+        getOpcode(instruct, *(opTree).right);
     else
-        getOpcode(instruct, opTree->left);
+        getOpcode(instruct, *(opTree).left);
 }
 
-int getFormat(char instruct[])
+int getFormat(char instruct[], Tree opTree)
 {
     if(strcmp(instruct, opTree.symbol)== 0)
     {
@@ -80,11 +81,11 @@ int getFormat(char instruct[])
     }
     else if(instruct[FIRST] >= opTree.symbol[FIRST])
     {
-        getFormat(instruct, opTree->right);
+        getFormat(instruct, *(opTree).right);
     }
     else
     {
-        getFormat(instruct, opTree->left);
+        getFormat(instruct, *(opTree).left);
     }
 }
 
