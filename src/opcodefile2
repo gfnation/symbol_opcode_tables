@@ -1,0 +1,8 @@
+fix 5 1
+divf 4 3
+jsub 11 3
+compr 201 2
+divr 202 2
+j 13 3
+ldb 17 3
+ldx 14 3

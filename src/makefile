@@ -12,3 +12,5 @@ opcodeTable.o: opcodeTable.c
 	gcc -c opcodeTable.c
 symbolTable.o: symbolTable.c
 	gcc -c symbolTable.c
+clean:
+	rm *.o
