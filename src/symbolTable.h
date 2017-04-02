@@ -7,6 +7,6 @@ struct symTable
 	int LC_Value;
 };
 
-void insert(Table ins, char sym[BUFFER], int lc);
+void insertSymbol(Table ins, char sym[BUFFER], int lc);
 
 void symbolTable(FILE *in);
