@@ -1,6 +1,5 @@
 #include "opcodeTable.h"
 
-
 Tree buildOpcodeTable(FILE *op)
 {
   char ins[instruction];

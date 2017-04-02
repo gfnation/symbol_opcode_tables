@@ -1,4 +1,5 @@
 #include "opcodeTable.h"
+#include "buildOpcodeTable.h"
 #define FIRST 0
 void opcodeTable(FILE *in)
 {
