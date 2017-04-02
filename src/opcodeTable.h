@@ -14,7 +14,7 @@ struct tree
 };
 
 
-void insert();
+void insert(Tree ins, Tree full);
 int getOpcode(char instruct[], Tree opTree);
 int getFormat(char instruct[], Tree opTree);
 void toString(Tree contents);
